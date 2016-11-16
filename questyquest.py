@@ -5,6 +5,7 @@ from pygame.sprite import Group
 
 from quester import Quester
 from monster import Monster
+from room import Room
 
 import game_functions as gf
 
@@ -19,12 +20,14 @@ game_active = True
 #set up a quester	
 bob = Quester(screen)
 
+#create a room to be in
+room = Room(screen)
 
 #do some stuff
 bob.show_stats()
 
 
-grue = Monster(screen,2)
+grue = Monster(screen, 2, room)
 
 monsters = Group()
 
@@ -35,9 +38,9 @@ def play_game():
 	while game_active:	
 		
 		gf.check_events(screen, bob, monsters)
-		bob.update()
+		bob.update(room)
 		#actually draw quester on screen
-		gf.update_screen(screen,bob,monsters)
+		gf.update_screen(screen,bob,monsters,room)
 		gf.check_quester_collision(screen,bob,monsters)
 
 

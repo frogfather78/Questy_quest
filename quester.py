@@ -30,6 +30,8 @@ class Quester(Sprite):
 		self.moving_up = False
 		self.moving_down = False
 		
+		#speed setting
+		self.speed = 1
 		
 		#stats about the quester
 		self.xp = 0
@@ -66,17 +68,17 @@ class Quester(Sprite):
 		self.strength = int(self.strength * 1.5)
 		self.magic = int(self.magic * 1.5)
 
-	def update(self):
+	def update(self, room):
 		"""update position based on movement flag"""
-		#move up/down/let/right within screen
-		if self.moving_right and self.rect.right < self.screen_rect.right:
-			self.rect.centerx += 5
-		if self.moving_left and self.rect.left > 0:
-			self.rect.centerx -= 5
-		if self.moving_down and self.rect.bottom < self.screen_rect.bottom:
-			self.rect.centery += 5
-		if self.moving_up and self.rect.top > 0:
-			self.rect.centery -= 5
+		#move up/down/let/right within room
+		if self.moving_right and self.rect.right < room.rect.right:
+			self.rect.centerx += self.speed
+		if self.moving_left and self.rect.left > room.rect.left:
+			self.rect.centerx -= self.speed
+		if self.moving_down and self.rect.bottom < room.rect.bottom:
+			self.rect.centery += self.speed
+		if self.moving_up and self.rect.top > room.rect.top:
+			self.rect.centery -= self.speed
 
 
 	def blitme(self):

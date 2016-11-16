@@ -1,11 +1,12 @@
 import dice as d
 import pygame
 
+from random import randint
 from pygame.sprite import Sprite
 
 class Monster(Sprite):
 	"""something a quester might fight or whatever"""
-	def __init__(self, screen, level):
+	def __init__(self, screen, level, room):
 		
 		super(Monster,self).__init__()
 		
@@ -24,9 +25,11 @@ class Monster(Sprite):
 		self.rect = self.image.get_rect()
 		self.screen_rect = screen.get_rect()
 		
-		#place quester in centre of screen
-		self.rect.centerx = self.screen_rect.centerx + 50
-		self.rect.centery = self.screen_rect.centery - 50
+		#place monster somewhere in room??
+		self.x = randint(room.rect.left, room.rect.right)
+		self.rect.centerx = self.x
+		self.y = randint(room.rect.top, room.rect.bottom)
+		self.rect.centery = self.y
 
 	def show_stats(self):
 		"""display information about monster"""

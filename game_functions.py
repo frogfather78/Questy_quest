@@ -6,7 +6,7 @@ from quester import Quester
 from monster import Monster
 import dice as d
 
-
+from time import sleep
 
 def check_keydown_events(event,screen,quester):
 	"""respond to keypresses"""
@@ -62,11 +62,14 @@ def check_quester_collision(screen,quester,monsters):
 		fight(quester,monster)
 
 
-def update_screen(screen, quester, monsters):
+def update_screen(screen, quester, monsters, room):
 	"""update images on screen and flip to new screen"""
 	#redraw stuff behind quester and monster(s)
 	bg_colour = (90,90,90)
 	screen.fill(bg_colour)
+	
+	#draw room on top of absolute background
+	room.draw_room()
 	
 	quester.blitme()
 	monsters.draw(screen)
@@ -78,6 +81,7 @@ def update_screen(screen, quester, monsters):
 
 def fight(quester, monster):
 	"""just battering each other, basically"""
+	sleep(0.5) #just pause for a beat before doing the fighting
 	while quester.hp > 0:
 		if (d.roll(10) * quester.strength) > (d.roll(10) * monster.strength):
 			#quester hits monster
