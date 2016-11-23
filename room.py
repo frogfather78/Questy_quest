@@ -20,7 +20,7 @@ class Room(Sprite):
 		self.rect.centery = self.screen_rect.centery
 		
 	def draw_room(self):
-		"""draw bullet to screen"""
+		"""draw room to screen"""
 		pygame.draw.rect(self.screen, self.bg_colour, self.rect)
 		
 	

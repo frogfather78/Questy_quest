@@ -15,7 +15,7 @@ class Monster(Sprite):
 		#initialise some things about quester
 		self.hp = (20 * level) + 4 * d.roll(6)
 		self.max_hp = self.hp 
-		self.strength = (5 * level) + d.roll(6)
+		self.strength = (3 * level) + d.roll(6)
 		self.magic = (3 * level) + d.roll(6)
 			
 		self.level = level

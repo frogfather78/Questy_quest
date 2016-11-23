@@ -62,18 +62,19 @@ def check_quester_collision(screen,quester,monsters):
 		fight(quester,monster)
 
 
-def update_screen(screen, quester, monsters, room):
+def update_screen(screen, quester, monsters, room, door, sb):
 	"""update images on screen and flip to new screen"""
 	#redraw stuff behind quester and monster(s)
-	bg_colour = (90,90,90)
+	bg_colour = (10,10,10)
 	screen.fill(bg_colour)
 	
 	#draw room on top of absolute background
 	room.draw_room()
+	door.draw_door()
 	
 	quester.blitme()
 	monsters.draw(screen)
-
+	sb.show_stats()
 
 	#make most recently drawn screen visible
 	pygame.display.flip()
