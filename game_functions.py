@@ -4,6 +4,7 @@ import pygame
 
 from quester import Quester
 from monster import Monster
+from room import Room
 import dice as d
 
 from time import sleep
@@ -54,23 +55,40 @@ def check_events(screen,quester,monsters):
 			elif event.type == pygame.KEYUP:
 				check_keyup_events(event,screen,quester)
 
-def check_quester_collision(screen,quester,monsters):
-	"""check to see if quester has bumped into anything and fight it"""
+def check_quester_collision(screen,quester,monsters,doors,floor):
+	"""check to see if quester has bumped into anything
+	 and interact with it"""
 	#dokill = false because we don't want to kill unless quester wins 
 	combatants = pygame.sprite.spritecollide(quester,monsters,False)
 	for monster in combatants:
 		fight(quester,monster)
+	open_doors = pygame.sprite.spritecollide(quester,doors,True)
+	#remove door because we'll just put in a new room
+	
+	for open_door in open_doors:
+		new_loc = quester.location
+		print("open a door " + open_door.side)
+		if open_door.side == "w":
+			new_loc = quester.location - 1
+		open_room(screen,quester,new_loc,floor,open_door.side)
+		
+def open_room(screen,quester,new_loc,floor,side):
+	"""open a door to a new room"""
+	new_room = Room(floor,new_loc,screen,side)
+	floor.open_rooms.add(new_room)
+	print(str(floor.open_rooms))
 
 
-def update_screen(screen, quester, monsters, room, door, sb):
+def update_screen(screen, quester, monsters, floor, sb):
 	"""update images on screen and flip to new screen"""
 	#redraw stuff behind quester and monster(s)
 	bg_colour = (10,10,10)
 	screen.fill(bg_colour)
 	
 	#draw room on top of absolute background
-	room.draw_room()
-	door.draw_door()
+	for room in floor.open_rooms:
+		room.draw_room()
+		room.doors.draw(screen)
 	
 	quester.blitme()
 	monsters.draw(screen)

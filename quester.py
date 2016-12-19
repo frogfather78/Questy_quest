@@ -9,11 +9,12 @@ level_limits = [0, 10, 100, 300, 600, 1000, 1500, 2500]
 
 class Quester(Sprite):
 	"""someone who goes on a questy quest"""
-	def __init__(self,screen):
+	def __init__(self,screen,location):
 		#initialise some things about quester
 		super(Quester,self).__init__()
 		
 		self.screen = screen
+		self.location = location #place in the map
 		
 		#load image and get rect
 		self.image = pygame.image.load('images/ship.bmp')
@@ -54,7 +55,7 @@ class Quester(Sprite):
 		"""when quester does something good"""
 		self.xp += points
 		#check if this takes quester into a new level
-		if self.xp > level_limits[self.level]:
+		if self.xp >= level_limits[self.level]:
 			#level up
 			print("Level Up!")
 			self.level_up()
