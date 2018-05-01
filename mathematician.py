@@ -62,6 +62,9 @@ def mission(level, Player):
 			game_on = False
 			return 0
 		
+		#cast ans to int for comparison with the correct answer
+		ans = int(ans)
+		
 		elif ans == a+b:
 			#correct
 			print("Correct")
