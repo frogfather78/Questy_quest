@@ -56,6 +56,10 @@ def mission(level, Player):
 	
 		ans = input("> ")
 		
+		#print("You answered " + str(ans))
+		
+		ans=int(ans)
+		
 		
 		if ans == "quit":
 			#quit mission and stop playing
