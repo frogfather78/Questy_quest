@@ -55,19 +55,17 @@ def mission(level, Player):
 		print(str(a) + " + " + str(b))
 	
 		ans = input("> ")
-		
-		#print("You answered " + str(ans))
-		
-		ans=int(ans)
-		
+	
+		#cast ans to int for comparison with the correct answer
+		#assuming it's a number as string...
+		ans = int(ans)	
 		
 		if ans == "quit":
 			#quit mission and stop playing
 			game_on = False
 			return 0
 		
-		#cast ans to int for comparison with the correct answer
-		ans = int(ans)
+
 		
 		elif ans == a+b:
 			#correct
