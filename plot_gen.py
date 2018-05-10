@@ -3,19 +3,29 @@
 import json
 import random
 
+f_name = "plot_data.json"
+
 plot = ""
 
-#adjective, employment, person
 
-adjective = ["sweaty", "pale", "hirsute"]
+def load_plot_data(f_name):
+	try:
+		with open(f_name) as f_obj:
+			plot_data = json.load(f_obj)
+		
+	except FileNotFoundError:
+		return None
+	else:
+		return plot_data
 
-employment = ["Postie", "Factory owner", "Brewer"]
+p_data = load_plot_data(f_name)
 
-person = ["Man", "Woman", "Non-binary teenager"]
 
-dude_1 = "A " + random.choice(adjective) + " " + random.choice(employment)
+dude_1 = "A " + random.choice(p_data['adjective']) 
 
-dude_1 += " who is a " + random.choice(person)
+dude_1 += " " + random.choice(p_data['employment'])
+
+dude_1 += " who is a " + random.choice(p_data['person'])
 
 
 print(dude_1)
