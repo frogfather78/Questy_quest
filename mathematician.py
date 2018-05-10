@@ -30,28 +30,33 @@ def play_game(Player):
 	print(introduction_text)
 
 	while game_on:
-		
+
+		questions = 3
 	
 		if Player.exp < 11:
-			mission(9, Player)
+			mission(9, Player, questions)
 		elif Player.exp < 100:
-			mission(40, Player)
+			mission(40, Player, questions)
 		else:
-			mission(99, Player)
+			mission(99, Player, questions)
 	
 	
-def mission(level, Player):
+def mission(level, Player, questions):
 		
 	print("\n\nIt's an adding game")
 	
 	score = 0
 	
-	for i in range(0,10):
+	for i in range(0, questions):
 	
 		
 		a = randint(1, level)
 		b = randint(1, level)
-	
+
+		exp_gain=0
+		#exp_bang is how excited to get about the exp_gain
+		exp_bang=""
+
 		print(str(a) + " + " + str(b))
 	
 		ans = input("> ")
@@ -76,13 +81,28 @@ def mission(level, Player):
 			print("WRONGO")
 		
 	print("You scored " + str(score))	
-	
-	if score > 9:
-		#pass mark
-		Player.exp += level
-	
+
+
+
+	if score == questions:
+		#full score, bonus marks
+		exp_gain = int(level * (1 + randint(1,5)/20))
+		exp_bang="!!"
+
+	elif score >= int(questions * .9):
+		#90% pass mark
+		exp_gain = int(level * (randint(5,11)/10))
+		exp_bang="!"
+
+	elif score >= int(questions * .5):
+		#50% not completely terrible, but NO BANG FOR YOU
+		exp_gain = int(level * (randint(1,3)/10))
+		exp_bang=""
+
+	Player.exp += exp_gain
+
+	print("+" + str(exp_gain) + " exp" + exp_bang)
 	print("Your exp: " + str(Player.exp))
-		
 	
 	
 play_game(bob)
