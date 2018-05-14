@@ -1,5 +1,6 @@
 {
-	"adjective": ["sweaty", "pale", "hirsute", "kinky", "sarcastic", "brainy", "tall", "crippled", "cool"],
-	"employment": ["Postie", "Factory owner", "Brewer", "Blacksmith", "potter", "bank clerk", "wizard", "comedian"],
+	"adjective": ["sweaty", "pale", "hirsute", "kinky", "sarcastic", "brainy", "tall", "crippled", "cool", "morose", "pessimistic"],
+	"employment": ["postie", "factory owner", "brewer", "blacksmith", "potter", "bank clerk", "wizard", "comedian", "author", 
+		  	"technomancer", "chef", "plasterer", "dairy farmer"],
 	"person": ["Man", "Woman", "Non-binary teenager", "Child"]
 }
