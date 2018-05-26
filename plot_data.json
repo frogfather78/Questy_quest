@@ -3,6 +3,7 @@
 		     "sporty", "jealous", "portly", "bruised", "clammy", "malodorous", "lanky", "short",
 		     "grinning", "scarred", "frightened"],
 	"employment": ["postie", "factory owner", "brewer", "blacksmith", "potter", "bank clerk", "wizard", "comedian", "author", 
-		  	"technomancer", "chef", "plasterer", "dairy farmer"],
+		  	"technomancer", "chef", "plasterer", "dairy farmer", "archeologist", "professional gambler", "urchin",
+			"guitarist", "arms salesman", "fugitive"],
 	"person": ["Man", "Woman", "Non-binary teenager", "Child"]
 }
