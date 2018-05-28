@@ -9,6 +9,7 @@ class Player():
 
     def __init__(self):
         self.exp = 1
+        self.level = 10
 
 
 # self.name = input("What's your name? ")
@@ -39,15 +40,10 @@ def play_game(Player):
 
         questions = 3
 
-        if Player.exp < 11:
-            mission(9, Player, questions)
-        elif Player.exp < 100:
-            mission(40, Player, questions)
-        else:
-            mission(99, Player, questions)
 
+        mission(Player, questions)
 
-def mission(level, Player, questions):
+def mission(Player, questions):
     print("\n\nIt's an adding game")
 
     score = 0
@@ -59,8 +55,8 @@ def mission(level, Player, questions):
 
     for i in range(0, questions):
 
-        a = randint(1, level)
-        b = randint(1, level)
+        a = randint(1, Player.level)
+        b = randint(1, Player.level)
 
         print(str(a) + " + " + str(b))
 
@@ -89,17 +85,17 @@ def mission(level, Player, questions):
 
     if score == questions:
         # full score, bonus marks
-        exp_gain = int(level * (1 + randint(1, 5) / 20))
+        exp_gain = int(Player.level * (1 + randint(1, 5) / 20))
         exp_bang = "!!"
 
     elif score >= int(questions * .9):
         # 90% pass mark
-        exp_gain = int(level * (randint(5, 11) / 10))
+        exp_gain = int(Player.level * (randint(5, 11) / 10))
         exp_bang = "!"
 
     elif score >= int(questions * .5):
         # 50% not completely terrible, but NO BANG FOR YOU
-        exp_gain = int(level * (randint(1, 3) / 10))
+        exp_gain = int(Player.level * (randint(1, 3) / 10))
         exp_bang = ""
 
     Player.exp += exp_gain
