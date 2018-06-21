@@ -1,8 +1,29 @@
 from random import randint
+import json
+import random
 
-#branch: level-up
+
+#load plot and level up text into p_data
+f_name = "math_plot.json"
+
+
+def load_plot_data(f_name):
+
+	try:
+		with open(f_name) as f_obj:
+			plot_data = json.load(f_obj)
+		
+	except FileNotFoundError:
+		return None
+	else:
+		return plot_data
+
+p_data = load_plot_data(f_name)
 
 # initialise experience level
+
+
+
 
 class Player():
     """someone who plays the game"""
@@ -19,25 +40,14 @@ bob = Player()
 game_on = True
 
 #sum_l is the limit for sums per level
-sum_l = [10,15,18,22,25,37,50,60,78,100]
+sum_l = [9,15,25,40,60,100,500,500,1000,1000]
 
 max_l = 8 #maximum level
 
 level_limits = [1,20,50,150,300,700,1800,4000,9200,21000]
 
 
-introduction_text = "You're in a room with a row of ten dusty lightbulbs"
-
-introduction_text += ". It doesn't look like anyone has been in here"
-
-introduction_text += " for some time. A row of buttons is set in the "
-
-introduction_text += "top of the counter. The bulbs and keys are numbered"
-
-introduction_text += " 0 to 9. One of the bulbs lights up and then "
-
-introduction_text += "another."
-
+introduction_text = p_data["introduction"]
 
 def play_game(Player):
     """main game loop"""
@@ -49,12 +59,12 @@ def play_game(Player):
 
     while game_on:
 
-        questions = 6
+        questions = 5
 
         mission(Player, questions)
 
 def mission(Player, questions):
-    print("\n\nIt's an adding game")
+
 
     score = 0
 
@@ -76,14 +86,23 @@ def mission(Player, questions):
         # assuming it's a number as string...
         ans = int(ans)
 
-        if ans == "quit":
-            # quit mission and stop playing
-            game_on = False
-            return 0
+#        if ans == "q":
+#            # quit mission and stop playing
+#            game_on = False
+#            return 0
+#        else:
+#            #never mind
 
+#        try:
+#            ans = int(ans)
+#        except NameError:
+#                print("The buttons go from 0-9. Shouting doesn't work")
+#                exit()
+#        else:
+#            #carry on?
+               
 
-
-        elif ans == a + b:
+        if ans == a + b:
             # correct
             print("Correct")
             score += 1
@@ -91,21 +110,21 @@ def mission(Player, questions):
             # wrong
             print("WRONGO")
 
-    print("You scored " + str(score))
+    print("You scored " + str(score) + "/" + str(questions))
 
     if score == questions:
         # full score, bonus marks
         exp_gain = int(z * (1 + randint(1, 5) / 20))
         exp_bang = "!!"
 
-    elif score >= int(questions * .9):
+    elif score >= int(questions * .8):
         # 90% pass mark
         exp_gain = int(z * (randint(5, 11) / 10))
         exp_bang = "!"
 
     elif score >= int(questions * .5):
         # 50% not completely terrible, but NO BANG FOR YOU
-        exp_gain = int(z * (randint(1, 3) / 10))
+        exp_gain = int(z * (randint(1, 3)) / 10)
         exp_bang = ""
 
     l_up_msg = ""
@@ -124,17 +143,13 @@ def level_up(Player):
     Player.level += 1
     if Player.level == 1:
         #first level. Well done, rookie
-        l_up_msg = "\n\nAn old man enters the room with the dusty lightbulbs."
-        l_up_msg += " He hands you a card with a big 1 on it."
-        l_up_msg += " \n'You're now Level 1,' he says. 'You can come through.'"
-        l_up_msg += " \nHe brings you into a room with a similar machine,"
-        l_up_msg += " but much less dusty."
+        l_up_msg = p_data["1"]
     elif Player.level == 3:
         #the plot thickens
-        l_up_msg = "\n\nThe old man pops into the room."
-        l_up_msg += "\n'You might have noticed the questions getting harder.'" 
-        l_up_msg += "\n'I'll come back if you get to level 5.'"
-        l_up_msg += "\n\nYou're now level 3."
+        l_up_msg = p_data["3"]
+    elif Player.level == 5:
+        #a new room
+        l_up_msg = p_data["5"]
     else:
         #some other level
         l_up_msg = "\nYou're now level " + str(Player.level)
