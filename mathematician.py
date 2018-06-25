@@ -2,6 +2,8 @@ from random import randint
 import json
 import random
 
+from mission import mission
+
 
 #load plot and level up text into p_data
 f_name = "math_plot.json"
@@ -31,6 +33,7 @@ class Player():
     def __init__(self):
         self.exp = 1
         self.level = 0
+        self.streak = 0
 
 
 # self.name = input("What's your name? ")
@@ -55,105 +58,18 @@ def play_game(Player):
     print(introduction_text)
 
     questions = 3
-    mission(Player, questions)
+    mission(Player, questions, sum_l, level_limits)
 
-    while game_on:
+    while Player.level < 5:
+
+        questions = 3
+
+        mission(Player, questions, sum_l, level_limits)
+        
+    while Player.level >= 5:
 
         questions = 5
 
-        mission(Player, questions)
-
-def mission(Player, questions):
-
-
-    score = 0
-
-    exp_gain = 0
-    #exp_bang is how excited to get about the exp_gain
-    exp_bang = ""
-
-    for i in range(0, questions):
-
-        z = sum_l[Player.level]
-        a = randint(1, z)
-        b = randint(1, z)
-
-        print(str(a) + " + " + str(b))
-
-        ans = input("> ")
-
-        # cast ans to int for comparison with the correct answer
-        # assuming it's a number as string...
-        ans = int(ans)
-
-#        if ans == "q":
-#            # quit mission and stop playing
-#            game_on = False
-#            return 0
-#        else:
-#            #never mind
-
-#        try:
-#            ans = int(ans)
-#        except NameError:
-#                print("The buttons go from 0-9. Shouting doesn't work")
-#                exit()
-#        else:
-#            #carry on?
-               
-
-        if ans == a + b:
-            # correct
-            print("Correct")
-            score += 1
-        else:
-            # wrong
-            print("WRONGO")
-
-    print("You scored " + str(score) + "/" + str(questions))
-
-    if score == questions:
-        # full score, bonus marks
-        exp_gain = int(z * (1 + randint(1, 5) / 20))
-        exp_bang = "!!"
-
-    elif score >= int(questions * .8):
-        # 90% pass mark
-        exp_gain = int(z * (randint(5, 11) / 10))
-        exp_bang = "!"
-
-    elif score >= int(questions * .5):
-        # 50% not completely terrible, but NO BANG FOR YOU
-        exp_gain = int(z * (randint(1, 3)) / 10)
-        exp_bang = ""
-
-    l_up_msg = ""
-    #message about levelling up
-
-    Player.exp += exp_gain
-    if Player.exp > level_limits[Player.level]:
-        
-        l_up_msg = level_up(Player)
-
-    print("+" + str(exp_gain) + " exp" + exp_bang)
-    print(l_up_msg)
-    print("\nYour exp: " + str(Player.exp) + "/" + str(level_limits[Player.level]))
-
-def level_up(Player):
-    Player.level += 1
-    if Player.level == 1:
-        #first level. Well done, rookie
-        l_up_msg = p_data["1"]
-    elif Player.level == 3:
-        #the plot thickens
-        l_up_msg = p_data["3"]
-    elif Player.level == 5:
-        #a new room
-        l_up_msg = p_data["5"]
-    else:
-        #some other level
-        l_up_msg = "\nYou're now level " + str(Player.level)
-        
-    return l_up_msg
+        mission(Player, questions, sum_l, level_limits)
 
 play_game(bob)
