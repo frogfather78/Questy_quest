@@ -1,4 +1,4 @@
-from random import randint
+from random import randint, randrange
 import json
 import random
 
@@ -62,7 +62,7 @@ def mission(Player, questions, sum_l, level_limits):
 
     elif score >= int(questions * .8):
         # 80% pass mark
-        exp_gain = int(z * (randint(5, 11) / 10))
+        exp_gain = int(z * (1 + randrange(-2, 3) / 10))
         exp_bang = "!"
 
     elif score >= int(questions * .5):
@@ -95,6 +95,9 @@ def level_up(Player):
     elif Player.level == 5:
         #a new room
         l_up_msg = p_data["5"]
+    elif Player.level == 6:
+        #the truth!
+        l_up_msg = p_data["6"]
     else:
         #some other level
         l_up_msg = "\nYou're now level " + str(Player.level)
