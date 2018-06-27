@@ -53,7 +53,8 @@ def mission(Player, questions, sum_l, level_limits):
             print("WRONGO")
             Player.streak = 0
         
-        print("Streak " + str(Player.streak))
+        streak_msg = check_streak(Player)
+        print(streak_msg)
     
     print("You scored " + str(score) + "/" + str(questions))
 
@@ -109,7 +110,15 @@ def level_up(Player):
         
     return l_up_msg
     
-    
+def check_streak(Player):
+    if Player.streak == 10:
+        return "Streak 10!"
+    elif Player.streak == 50:
+        return "Streak 50!!"
+    elif Player.streak == 100:
+        return  "STREAK 100!!"
+    else:
+        return ""
 
 #load plot and level up text into p_data
 f_name = "math_plot.json"
