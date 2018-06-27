@@ -11,6 +11,8 @@ def mission(Player, questions, sum_l, level_limits):
     #exp_bang is how excited to get about the exp_gain
     exp_bang = ""
 
+    full_marks = 0
+
     for i in range(0, questions):
 
         z = sum_l[Player.level]
@@ -59,6 +61,7 @@ def mission(Player, questions, sum_l, level_limits):
         # full score, bonus marks
         exp_gain = int(z * (1 + randint(1, 5) / 20))
         exp_bang = "!!"
+        full_marks = 1
 
     elif score >= int(questions * .8):
         # 80% pass mark
@@ -81,6 +84,8 @@ def mission(Player, questions, sum_l, level_limits):
     print("+" + str(exp_gain) + " exp" + exp_bang)
     print(l_up_msg)
     print("\nYour exp: " + str(Player.exp) + "/" + str(level_limits[Player.level]))
+
+    return full_marks
 
 
 
