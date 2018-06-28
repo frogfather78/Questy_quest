@@ -71,14 +71,14 @@ def play_game(Player):
     while Player.level >= 3:
 
         questions = 5
-
+        print("Let's do a quest")
         next_mission = mission(Player, questions, sum_l, level_limits)
             
         if next_mission == 1:
             print("Another mission opens")
             next_mission += mission(Player, questions, sum_l, level_limits)
-        elif next_mission == 2:
-            print("FINAL MISSION")
-            mission(Player, questions, sum_l, level_limits)
+            if next_mission == 2:
+               print("FINAL MISSION")
+               mission(Player, questions, sum_l, level_limits)
 
 play_game(bob)

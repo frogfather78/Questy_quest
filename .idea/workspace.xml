@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b75b4c0d-6ac0-4082-ad70-b43e995b477f" name="Default" comment="* set a variable number of questions per mission&#10;* varied exp reward based on score">
+    <list default="true" id="b75b4c0d-6ac0-4082-ad70-b43e995b477f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mission.py" beforeDir="false" afterPath="$PROJECT_DIR$/mission.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mathematician.py" beforeDir="false" afterPath="$PROJECT_DIR$/mathematician.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mathematician.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mathematician.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mathematician.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="61" selection-start-line="61" selection-end-line="61" />
+            <state relative-caret-position="404">
+              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -27,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mission.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mission.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mission.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="578">
-              <caret line="64" column="51" lean-forward="true" selection-start-line="64" selection-start-column="51" selection-end-line="64" selection-end-column="51" />
+              <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -54,11 +54,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/mission.py" root0="SKIP_INSPECTION" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mathematician.py" />
         <option value="$PROJECT_DIR$/mission.py" />
+        <option value="$PROJECT_DIR$/mathematician.py" />
       </list>
     </option>
   </component>
@@ -79,6 +82,11 @@
             <path>
               <item name="Questy_quest" type="b2602c69:ProjectViewProjectNode" />
               <item name="Questy_quest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Questy_quest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Questy_quest" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -107,8 +115,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/math_plot.json</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/mathematician.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/mission.py</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -116,8 +124,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/mission.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/mission.pyc</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/__pycache__/mission.cpython-36.pyc</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -309,7 +316,21 @@
       <option name="project" value="LOCAL" />
       <updated>1525965483621</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="* fixed exp reward based on 80% score">
+      <created>1530028078367</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1530028078367</updated>
+    </task>
+    <task id="LOCAL-00004" summary="mucking about with sequences of missions">
+      <created>1530116767776</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1530116767776</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -322,7 +343,7 @@
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.18954249" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" visible="true" weight="0.18954249" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -351,7 +372,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="cast answer to int for matching" />
     <MESSAGE value="* set a variable number of questions per mission&#10;* varied exp reward based on score" />
-    <option name="LAST_COMMIT_MESSAGE" value="* set a variable number of questions per mission&#10;* varied exp reward based on score" />
+    <MESSAGE value="* fixed exp reward based on 80% score" />
+    <MESSAGE value="mucking about with sequences of missions" />
+    <option name="LAST_COMMIT_MESSAGE" value="mucking about with sequences of missions" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/mathematician.py">
@@ -416,16 +439,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mathematician.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plot_data.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -439,9 +452,19 @@
     <entry file="file://$PROJECT_DIR$/mission.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
-          <caret line="64" column="51" lean-forward="true" selection-start-line="64" selection-start-column="51" selection-end-line="64" selection-end-column="51" />
+          <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mathematician.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
