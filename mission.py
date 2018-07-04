@@ -112,6 +112,8 @@ def level_up(Player):
     
 def check_streak(Player):
     if Player.streak == 10:
+        Player.trophies.add("X")
+        #this doesn't actually works
         return "Streak 10!"
     elif Player.streak == 50:
         return "Streak 50!!"
