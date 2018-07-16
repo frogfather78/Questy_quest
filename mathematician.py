@@ -86,7 +86,8 @@ def play_game(Player):
           questions = 3
           #read in the quest details from the p_data file as a list
           #trophy is the final/#3 item in the quest list
-          mission_msg = p_data["quest1"]
+          qq = random.choice(["quest1","quest2"])
+          mission_msg = p_data[qq]
           mission_reward = mission_msg[3]
           #mission_count is how many of the missions have been completed
           mission_count = 0
@@ -118,7 +119,7 @@ def play_game(Player):
                        
         elif ans == 2:
           
-          questions = 3
+          questions = 10
           mission(Player, questions, sum_l, level_limits)
         
         elif ans >= 3:
