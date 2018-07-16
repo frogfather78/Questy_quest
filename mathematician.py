@@ -3,6 +3,7 @@ import json
 import random
 
 from mission import mission
+from mission import level_up
 
 
 #load plot and level up text into p_data
@@ -83,22 +84,36 @@ def play_game(Player):
         if ans == 1:
                 
           questions = 3
-          mission_msg = ['','Another mission opens','FINAL MISSIOB']
-          mission_reward = 'A nice helmet'
+          #read in the quest details from the p_data file as a list
+          #trophy is the final/#3 item in the quest list
+          mission_msg = p_data["quest1"]
+          mission_reward = mission_msg[3]
+          #mission_count is how many of the missions have been completed
           mission_count = 0
           
-          print("Let's do a quest")
+          print(mission_msg[mission_count])
           mission_win = mission(Player, questions, sum_l, level_limits)
           mission_count += mission_win
+          #mission() returns 1 for full marks, so adding to mission_count
+          #keeps track of where we are in quest line
           while mission_win == 1:
               print(mission_msg[mission_count])
               mission_win = mission(Player, questions, sum_l, level_limits)
               mission_count += mission_win
+              
+              #mission_count == 3 is the quest win!
               if mission_count == 3:
                  Player.exp += 200
+                 if Player.exp > level_limits[Player.level]:
+                    #give a load of exp, check for level up
+                    
+                    l_up_msg = level_up(Player)
+                 
                  Player.trophies.append(mission_reward)
                  print("Yo, good work, beat the quest")
+                 print(l_up_msg)
                  print("\nYour exp: " + str(Player.exp) + "/" + str(level_limits[Player.level]))
+                 print("\nYou gain a " + mission_reward)
                  break
                        
         elif ans == 2:
@@ -107,6 +122,13 @@ def play_game(Player):
           mission(Player, questions, sum_l, level_limits)
         
         elif ans >= 3:
-          print(Player.trophies)
+          
+          trophy_num = len(Player.trophies)
+          print("You have " + str(trophy_num) + " trophies")
+          for n in list(range(trophy_num)):
+             
+             print(Player.trophies[n])
+             
+          print("\n\n")
 
 play_game(bob)

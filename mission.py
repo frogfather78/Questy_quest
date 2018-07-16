@@ -26,22 +26,7 @@ def mission(Player, questions, sum_l, level_limits):
         # cast ans to int for comparison with the correct answer
         # assuming it's a number as string...
         ans = int(ans)
-
-#        if ans == "q":
-#            # quit mission and stop playing
-#            game_on = False
-#            return 0
-#        else:
-#            #never mind
-
-#        try:
-#            ans = int(ans)
-#        except NameError:
-#                print("The buttons go from 0-9. Shouting doesn't work")
-#                exit()
-#        else:
-#            #carry on?
-               
+           
 
         if ans == a + b:
             # correct
