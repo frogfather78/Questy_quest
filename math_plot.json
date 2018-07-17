@@ -4,7 +4,7 @@
 	"3": "\n\nThe old man pops into the room. \n'You might have noticed the questions getting harder.'\n'I'll come back if you get to level 5.'\n\nYou're now level 3.",
 	"5": "\n\nThe old man comes back into the room. \n'OK, you can add pretty well. Come on up to the level 5 room.'\n\nThere are a few other people in this room, sitting at terminals, pressing buttons and sweating.\n\n'Here's your terminal. Good luck! We're all counting on you.'\n\nThe terminal has a digital readout, but otherwise it looks a lot like the earlier desks.",
 	"6": "\n\n'Truth time now.' The old man has snuck up behind you.\n'The computers have forgotten how to do maths, so we need to help them out. Every time someone types something into a calculator, one of our operatives enters the answer. Are you up to it?'",
-	"quest1": ["This is a quest. Complete the missions and gets a prize", "This is the next of missions", "Ooh, this is the last mission of the quest", "nice helmet"],
+	"quest1": ["Bernard from the bookshop is doing a stock check and needs help adding the totals on the boxes up", "There are some more boxes behind the first shelf", "Then there are some more boxes in a back room", "bookmark"],
 	"quest2": ["The princess is in the castle", "You have entered the castle and fight a dragon", "Rescue the princess and ride to victory", "Princess' locket"]
 
 }
