@@ -59,12 +59,12 @@ def play_game(Player):
 
     print(introduction_text)
 
-    questions = 3
+    questions = int(p_data["questions_base"] / 3)
     mission(Player, questions, sum_l, level_limits)
 
     while Player.level < 3:
 
-        questions = 2
+        questions = int(p_data["questions_base"] / 2)
 
         mission(Player, questions, sum_l, level_limits)
 
@@ -83,12 +83,14 @@ def play_game(Player):
         
         if ans == 1:
                 
-          questions = 3
+          questions = p_data["questions_base"]
           #read in the quest details from the p_data file as a list
-          #trophy is the final/#3 item in the quest list
-          qq = random.choice(["quest1","quest2","quest3"])
+          #trophy is the final item in the quest list
+          qq = random.choice(["quest1","quest2","quest3","quest4","quest5"])
           mission_msg = p_data[qq]
-          mission_reward = mission_msg[3]
+          #q_count the number of missions in the quest, but remember the last one is the prize
+          q_count = len(mission_msg) - 1
+          mission_reward = mission_msg[q_count]
           #mission_count is how many of the missions have been completed
           mission_count = 0
           
@@ -102,8 +104,8 @@ def play_game(Player):
               mission_win = mission(Player, questions, sum_l, level_limits)
               mission_count += mission_win
               
-              #mission_count == 3 is the quest win!
-              if mission_count == 3:
+              #mission_count == q_count is the quest win!
+              if mission_count == q_count:
                  Player.exp += 200
                  if Player.exp > level_limits[Player.level]:
                     #give a load of exp, check for level up

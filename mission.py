@@ -35,7 +35,7 @@ def mission(Player, questions, sum_l, level_limits):
             Player.streak += 1
         else:
             # wrong
-            print("WRONGO")
+            print("Wrong")
             Player.streak = 0
         
         streak_msg = check_streak(Player)

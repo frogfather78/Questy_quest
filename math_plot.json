@@ -1,10 +1,13 @@
 {
+	"questions_base": 10,
 	"introduction": "You're in a room with a row of ten dusty lightbulbs. It doesn't look like anyone has been in here for some time. A row of buttons is set in the top of the counter. The bulbs and keys are numbered 0 to 9. One of the bulbs lights up and then another.",
 	"1": "\n\nAn old man enters the room with the dusty lightbulbs. He hands you a card with a big 1 on it.\n'You're now Level 1,' he says. 'You can come through.'\nHe brings you into a room with a similar machine, but much less dusty, and with two rows of bulbs.",
 	"3": "\n\nThe old man pops into the room. \n'You might have noticed the questions getting harder.'\n'I'll come back if you get to level 5.'\n\nYou're now level 3.",
 	"5": "\n\nThe old man comes back into the room. \n'OK, you can add pretty well. Come on up to the level 5 room.'\n\nThere are a few other people in this room, sitting at terminals, pressing buttons and sweating.\n\n'Here's your terminal. Good luck! We're all counting on you.'\n\nThe terminal has a digital readout, but otherwise it looks a lot like the earlier desks.",
 	"6": "\n\n'Truth time now.' The old man has snuck up behind you.\n'The computers have forgotten how to do maths, so we need to help them out. Every time someone types something into a calculator, one of our operatives enters the answer. Are you up to it?'",
-	"quest1": ["Bernard from the bookshop is doing a stock check and needs help adding the totals on the boxes up", "There are some more boxes behind the first shelf", "Manny used some boxes to prop up the subbuteo table", "bookmark"],
-	"quest2": ["Maisie the shepherd is trying to count sheep but keeps falling asleep", "Old Boot the sheepdog is helping round up some more sheep from the lower field", "Sally needs to report to Marlon the farmer", "shepherd's crook"],
-        "quest3": ["Tim is checking orders of paper", "David wants a report of monthly sales", "Gareth can't find his stapler", "handbag and glad rag"]
+	"quest1": ["Bernard is doing a stock check and needs help adding the totals on the boxes up", "There are some more boxes behind the first shelf", "Manny used some books to prop up the subbuteo table", "bookmark"],
+	"quest2": ["Maisie the shepherd is trying to count sheep but keeps falling asleep", "Old Boot the sheepdog is helping round up some more sheep from the lower field", "Wellington needs to report to Marlon the farmer", "shepherd's crook"],
+	"quest3": ["Tim is checking orders of paper", "David wants a report of monthly sales", "Gareth can't find his stapler", "handbag and glad rag"],
+	"quest4": ["Edmund is totting up the number of codpieces in his wardrobe","Baldrick can't work out how many turnips he owns","Melchett is enumerating the Queen's dominions","Nursie wants more udders","adder (black)"],
+	"quest5": ["Rick is counting badges for the Cliff Richard fan club","Neil has a lot of lentils","Vyvyan is collecting hammers","living doll"]
 }
