@@ -86,8 +86,9 @@ def play_game(Player):
           questions = p_data["questions_base"]
           #read in the quest details from the p_data file as a list
           #trophy is the final item in the quest list
-          qq = random.choice(["quest1","quest2","quest3","quest4","quest5"])
-          mission_msg = p_data[qq]
+          mission_msg = random.choice(p_data["quests"])
+
+
           #q_count the number of missions in the quest, but remember the last one is the prize
           q_count = len(mission_msg) - 1
           mission_reward = mission_msg[q_count]
