@@ -1,9 +1,9 @@
 {
 	"questions_base": 5,
-	"introduction": "You're in a room with a row of ten dusty lightbulbs. It doesn't look like anyone has been in here for some time. A row of buttons is set in the top of the counter. The bulbs and keys are numbered 0 to 9. One of the bulbs lights up and then another.",
-	"1": "\n\nAn old man enters the room with the dusty lightbulbs. He hands you a card with a big 1 on it.\n'You're now Level 1,' he says. 'You can come through.'\nHe brings you into a room with a similar machine, but much less dusty, and with two rows of bulbs.",
-	"3": "\n\nThe old man pops into the room. \n'You might have noticed the questions getting harder.'\n'I'll come back if you get to level 5.'\n\nYou're now level 3.",
-	"5": "\n\nThe old man comes back into the room. \n'OK, you can add pretty well. Come on up to the level 5 room.'\n\nThere are a few other people in this room, sitting at terminals, pressing buttons and sweating.\n\n'Here's your terminal. Good luck! We're all counting on you.'\n\nThe terminal has a digital readout, but otherwise it looks a lot like the earlier desks.",
+	"introduction": "You're in a room with dusty row of numbered keys and a dull grey terminal screen. It doesn't look like anyone has been in here for some time. As you approach the terminal, it sparks into life and displays a simple sum.",
+	"1": "\n\nAn old man enters the room with the dusty terminal. He hands you a card with a big 1 on it.\n'You're now Level 1,' he says. 'You can come through.'\nHe brings you into a room with a similar machine, but much less dusty, and turns it on.\n'Work on this for a bit,' he says, then leaves.",
+	"3": "\n\nThe old man pops into the room. \n'You might have noticed the questions getting harder.'\n'I'll come back if you get to level 5.'\n\nYou're now Level 3.",
+	"5": "\n\nThe old man comes back into the room. \n'OK, you can add pretty well. Come on up to the Level 5 room.'\n\nThere are a few other people in this room, sitting at terminals, pressing buttons and sweating.\n\n'Here's your terminal. Good luck! We're all counting on you.'\n\nThis terminal has a flatscreen monitor, but otherwise it looks a lot like the earlier desks.",
 	"6": "\n\n'Truth time now.' The old man has snuck up behind you.\n'The computers have forgotten how to do maths, so we need to help them out. Every time someone types something into a calculator, one of our operatives enters the answer. Are you up to it?'",
 	"quests": [
 	["Bernard is doing a stock check", "Fran has hidden some weird stuff she can't sell", "Manny used some books to prop up the subbuteo table", "black bookmark"],
@@ -11,7 +11,8 @@
 	["Edmund is totting up the number of codpieces in his wardrobe","Baldrick can't work out how many turnips he owns","Melchett is enumerating the Queen's dominions","Nursie wants more udders","merlin the happy pig"],
 	["Rick is counting badges for the Cliff Richard fan club","Neil has a lot of lentils","Vyvyan is collecting hammers","living doll"],
 	["Arnold is doing his astronavigation homework","The Cat has too many suits","Kryten has several piles of ironing","Dave is counting the stains on his shirt","small rouge one"],
-	["Cosmo has some cuban cigars","Jerry","Elaine is checking her sponges","George is airing his greivances","aluminum pole"],
+	["Michelle will say this only a limited number of times","Rene","Edith","Gruber","forged painting of the fallen madonna with the big boobies"],
+	["Cosmo is selling raincoats","Jerry is checking on his sniffing accountant","Elaine is checking her sponges","George is airing his grievances","aluminum pole"],
 	["Jack has some bottles of whiskey","Dougal is looking at his tank top collection","Mrs Doyle would like to ask you about tea","Ted has some money resting in his account","lovely horse"],
 	["Carla is checking her kids","Cliff has some dubious facts","Norm has had a lot of beers","Sam is counting his conquests","beermat"],
 	["Ted has many excellent albums","Bill has several most triumphant videos","Napoleon has to eat a lot of ice cream","flying V"]
