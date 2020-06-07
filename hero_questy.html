@@ -1,0 +1,51 @@
+<html>
+<head>
+<script>
+
+  var plot = [
+  "You look at the room. It is a poky bedroom with a pallet bed in one corner.",
+  "Next to the bed is a suit of armour, which looks roughly like it would fit you.",
+  "You put the armour on. It seems more holes than protection.",
+  "You go to see the Prince.",
+  ]
+
+  var story = 1;
+
+  function f(x) {
+    d = document.getElementById("text_box");
+    switch(x) {
+      case 1:
+        d.textContent = plot[story];
+        story++;
+
+        break;
+      case 2:
+        d.textContent = "Game over";
+
+        break;
+      case 3:
+        d.textContent = "You scratch an intimate area vigorously";
+    }
+
+
+    return 1;
+
+  }
+</script>
+
+  </head>
+
+  <body>
+    <div id="text_box" style="font-size:3em; font: bold 30px monospace; width:50%; height:250px; border:1px solid black; margin:2px; background-color:black; color:white;">
+      You open your eyes in a room.<br/>
+
+    </div>
+<br/>
+    <a href="#" onclick="f(1)" id="button1" style="font-size:2em; font-family:sans-serif; background-color:0000ff; color:fff;"> ok </a>&nbsp;
+    <a href="#" onclick="f(2)" id="button2" style="font-size:2em; font-family:sans-serif; background-color:0000ff; color:fff;"> no </a>&nbsp;
+    <a href="#" onclick="f(3)" id="button3" style="font-size:2em; font-family:sans-serif; background-color:0000ff; color:fff;"> bollocks </a>
+
+</body>
+
+
+</html>
